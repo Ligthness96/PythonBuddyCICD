@@ -69,7 +69,7 @@ reboot now
 ```sh
 ssh -p 2222 gitlab@<IP адрес>
 ```
-##### 4. Развернем GitLab и Jenkins на выделенном сервере.
+##### 4. Развернем GitLab на выделенном сервере.
    
    **mkdir** - создать папку
    **chown** - поменять владельца и группу владельца папки (-R - рекурсивно)
@@ -110,7 +110,7 @@ services:
 
 ```sh
 cd /opt/gitlab/
-docker compose up -d
+docker-compose up -d
 ```
 
 На гитлаб заходим по ссылке:
