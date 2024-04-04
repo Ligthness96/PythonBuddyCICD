@@ -277,6 +277,7 @@ deploy:
     - main
 
 ```
+### На сервере 
 
 Правим конфиг гитлаб раннера на сервере:
 
@@ -305,7 +306,7 @@ sudo nano /etc/gitlab-runner/config.toml
 ```sh
 sudo systemctl restart gitlab-runner.service 
 ```
-
+### Дальше на виртуалке 
 Правим зависимости python , чтобы код был рабочим:
 
 ```sh
