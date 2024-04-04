@@ -278,30 +278,14 @@ deploy:
 
 ```
 
-Правим конфиг гитлаб раннера:
+Правим конфиг гитлаб раннера на сервере:
 
 ```sh
 sudo nano /etc/gitlab-runner/config.toml
 ```
 
-Вставить следующий текст:
+Меняем только эту часть текст:
 ```
-concurrent = 1
-check_interval = 0
-connection_max_age = "15m0s"
-shutdown_timeout = 0
-
-[session_server]
-  session_timeout = 1800
-
-[[runners]]
-  name = "gitlab-runner"
-  url = "http://185.192.247.223/"
-  id = 1
-  token = "bP2upmsayj31dSsQf2Ga"
-  token_obtained_at = 2024-03-28T06:10:53Z
-  token_expires_at = 0001-01-01T00:00:00Z
-  executor = "docker"
   [runners.cache]
     MaxUploadedArchiveSize = 0
   [runners.docker]
@@ -315,6 +299,11 @@ shutdown_timeout = 0
     shm_size = 0
     network_mtu = 0
 
+```
+
+И перезагружаем раннер командой:
+```sh
+sudo systemctl restart gitlab-runner.service 
 ```
 
 Правим зависимости python , чтобы код был рабочим:
